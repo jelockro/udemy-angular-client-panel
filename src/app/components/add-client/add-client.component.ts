@@ -15,7 +15,7 @@ export class AddClientComponent implements OnInit {
     phone: '',
     balance: 0
   }
-  disableBalanceOnadd: boolean = true;
+  disableBalanceOnAdd: boolean = true;
   constructor() { }
 
   ngOnInit() {
