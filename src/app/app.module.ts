@@ -18,7 +18,8 @@ import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import {AngularFireAuthModule} from '@angular/fire/auth'
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
 // Import services > providers
 
 @NgModule({
@@ -41,7 +42,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
