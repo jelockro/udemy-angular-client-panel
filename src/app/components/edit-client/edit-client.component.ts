@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Client } from '../../models/Client';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 @Component({
   selector: 'app-edit-client',
@@ -6,10 +11,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-client.component.css']
 })
 export class EditClientComponent implements OnInit {
-
-  constructor() { }
+  id: string;
+  client: Client = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    balance: 0
+  }
+  disableBalanceOnEdit: boolean = true;
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private flashMessage: FlashMessagesService
+  ) { }
 
   ngOnInit() {
+    // Get id from url
+    this.id = this.route.snapshot.params['id'];
+    // Get Client
+    this.clientService.getClient(this.id).subscribe(client => this.client=client);
   }
+  
+  onSubmit({value, valid}:{value: Client, valid: boolean}){
+    // TO BE COMPLETED
+  }
+
 
 }
