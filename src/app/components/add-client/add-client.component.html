@@ -106,17 +106,16 @@
         >Must be at least 10 characters
         </div>
         <div class="form-group">
-          <label for="balance">Balance</label>
-          <input 
-            type="number"
-            class="form-control"
-            name="balance"
-            #clientBalance="ngModel"
-            [(ngModel)]="client.balance"
-            [disabled]="disableBalanceOnAdd"
-
-          >
-        </div>
+            <label for="balance">Balance</label>
+            <input 
+              type="number"
+              class="form-control"
+              [(ngModel)]="client.balance"
+              name="balance"
+              #clientBalance = "ngModel"
+              [disabled]="disableBalanceOnAdd"
+            >
+          </div>
         <input type="submit" value="Submit" class="btn btn-primary btn-block">
       </div>
     </form>
